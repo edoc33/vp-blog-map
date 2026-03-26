@@ -1158,7 +1158,10 @@ const scales = {
 
 function nodeR(d) {
     const primary = {clicks: d.gsc_clicks, signups: d.signups, sv: d.total_sv}[sizeMode] || 0;
-    return primary > 0 ? scales[sizeMode](primary) : scales.wc(d.word_count);
+    if (primary > 0) return scales[sizeMode](primary);
+    // Only fall back to word-count sizing on the default mode; otherwise show as minimal dot
+    if (sizeMode === "clicks") return scales.wc(d.word_count);
+    return 2.5;
 }
 
 function pos(d) { return [xS(d.x), yS(d.y)]; }
