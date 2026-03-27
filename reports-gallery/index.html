@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VP Reports Launch — Asset Gallery</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; }
+  .header { background: #0B51AE; color: #fff; padding: 32px 40px; }
+  .header h1 { font-size: 24px; font-weight: 700; }
+  .header p { font-size: 14px; opacity: 0.7; margin-top: 4px; }
+  .nav { display: flex; gap: 8px; padding: 20px 40px; background: #fff; border-bottom: 1px solid #e5e9f1; position: sticky; top: 0; z-index: 10; }
+  .nav button { padding: 8px 16px; border: 1px solid #e5e9f1; border-radius: 8px; background: #fff; font-size: 13px; cursor: pointer; font-weight: 500; }
+  .nav button.active { background: #0B51AE; color: #fff; border-color: #0B51AE; }
+  .section { padding: 32px 40px; display: none; }
+  .section.active { display: block; }
+  .section h2 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .section .desc { font-size: 13px; color: #787878; margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px; }
+  .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .card img { width: 100%; height: auto; display: block; }
+  .card .label { padding: 12px 16px; font-size: 13px; font-weight: 600; color: #3a3a3a; border-top: 1px solid #f0f0f0; }
+  .card .label span { font-weight: 400; color: #787878; font-size: 12px; display: block; margin-top: 2px; }
+  .full-width { max-width: 820px; }
+  .full-width img { width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .full-width .label { padding: 12px 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>VP Reports Launch — Asset Gallery</h1>
+  <p>16 assets generated from real API data (Mar 27, 2026) for landing pages 651, 652, 653</p>
+</div>
+<div class="nav">
+  <button class="active" onclick="show('steps')">How It Works Steps</button>
+  <button onclick="show('vertical')">Vertical Reports</button>
+  <button onclick="show('role')">Role-Specific Reports</button>
+  <button onclick="show('all')">All Assets</button>
+</div>
+
+<div class="section active" id="steps">
+  <h2>How It Works — Step Images</h2>
+  <p class="desc">Product UI mockups for the 3-step How It Works sections. 3 templates x 3 verticals = 9 images. Uploaded to Strapi (IDs 1635-1643) and attached to pages 651-653.</p>
+
+  <h3 style="margin: 16px 0 12px; font-size: 14px; color: #0B51AE;">Competitive Intelligence (Page 652)</h3>
+  <div class="grid">
+    <div class="card"><img src="reports-ci-step-setup.webp" loading="lazy"><div class="label">Step 1: Setup<span>Point at any competitor page</span></div></div>
+    <div class="card"><img src="reports-ci-step-detection.webp" loading="lazy"><div class="label">Step 2: Detection<span>AI watches and summarizes changes</span></div></div>
+    <div class="card"><img src="reports-ci-step-report.webp" loading="lazy"><div class="label">Step 3: Report<span>Weekly report in your inbox</span></div></div>
+  </div>
+
+  <h3 style="margin: 24px 0 12px; font-size: 14px; color: #0B51AE;">Compliance (Page 653)</h3>
+  <div class="grid">
+    <div class="card"><img src="reports-compliance-step-setup.webp" loading="lazy"><div class="label">Step 1: Setup<span>Add regulatory pages</span></div></div>
+    <div class="card"><img src="reports-compliance-step-detection.webp" loading="lazy"><div class="label">Step 2: Detection<span>AI classifies what matters</span></div></div>
+    <div class="card"><img src="reports-compliance-step-report.webp" loading="lazy"><div class="label">Step 3: Report<span>Scheduled compliance reports</span></div></div>
+  </div>
+
+  <h3 style="margin: 24px 0 12px; font-size: 14px; color: #0B51AE;">Finance (Page 651)</h3>
+  <div class="grid">
+    <div class="card"><img src="reports-finance-step-setup.webp" loading="lazy"><div class="label">Step 1: Setup<span>Add financial and regulatory pages</span></div></div>
+    <div class="card"><img src="reports-finance-step-detection.webp" loading="lazy"><div class="label">Step 2: Detection<span>AI summarizes every change</span></div></div>
+    <div class="card"><img src="reports-finance-step-report.webp" loading="lazy"><div class="label">Step 3: Report<span>Scheduled reports to your team</span></div></div>
+  </div>
+</div>
+
+<div class="section" id="vertical">
+  <h2>Vertical-Specific Sample Reports</h2>
+  <p class="desc">Built from real VP API data (report-page endpoint). Each shows 5 important changes with AI summaries from actual monitored companies. Uploaded to Strapi (IDs 1644-1646) and attached to "Why Visualping" sections.</p>
+  <div class="grid">
+    <div class="full-width"><img src="sample-report-ci.webp" loading="lazy"><div class="label">CI Report — Progressive, Airbnb, AutoZone, Datadog, Southwest<span>Page 652 · Strapi Media 1645</span></div></div>
+    <div class="full-width"><img src="sample-report-finance.webp" loading="lazy"><div class="label">Finance Report — Moody's, S&P Global, Constellation Brands, Veralto, Hartford<span>Page 651 · Strapi Media 1644</span></div></div>
+    <div class="full-width"><img src="sample-report-compliance.webp" loading="lazy"><div class="label">Compliance Report — Abbott, WBD, Hormel, GE Vernova, Pentair<span>Page 653 · Strapi Media 1646</span></div></div>
+  </div>
+</div>
+
+<div class="section" id="role">
+  <h2>Role-Specific Reports</h2>
+  <p class="desc">Same raw change data, re-summarized through three professional lenses. Demonstrates how VP Reports' custom AI prompts produce different intelligence for different roles. Uploaded to Strapi (IDs 1647-1649).</p>
+  <div class="grid">
+    <div class="full-width"><img src="role-report-portfolio_manager.webp" loading="lazy"><div class="label">Portfolio Manager Brief<span>Investment signals: risk-off positioning, pricing confidence, support formation. Strapi Media 1647</span></div></div>
+    <div class="full-width"><img src="role-report-compliance_officer.webp" loading="lazy"><div class="label">Compliance Officer Brief<span>Filing deadlines, Form 8-K verification, trading blackouts, proxy review. Strapi Media 1648</span></div></div>
+    <div class="full-width"><img src="role-report-competitive_analyst.webp" loading="lazy"><div class="label">Competitive Intelligence Analyst Brief<span>Pricing moves, fulfillment upgrades, analyst relations strategy, fare elasticity. Strapi Media 1649</span></div></div>
+  </div>
+</div>
+
+<div class="section" id="all">
+  <h2>All Assets</h2>
+  <p class="desc">Complete inventory: 16 images generated this session.</p>
+  <div class="grid" id="all-grid"></div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+const allFiles = [
+  'reports-ci-step-setup.webp','reports-ci-step-detection.webp','reports-ci-step-report.webp',
+  'reports-compliance-step-setup.webp','reports-compliance-step-detection.webp','reports-compliance-step-report.webp',
+  'reports-finance-step-setup.webp','reports-finance-step-detection.webp','reports-finance-step-report.webp',
+  'sample-report-ci.webp','sample-report-finance.webp','sample-report-compliance.webp','sample-report-real-data.webp',
+  'role-report-portfolio_manager.webp','role-report-compliance_officer.webp','role-report-competitive_analyst.webp'
+];
+const grid = document.getElementById('all-grid');
+allFiles.forEach(f => {
+  const name = f.replace('.webp','').replace(/-/g,' ').replace(/_/g,' ');
+  grid.innerHTML += '<div class="card"><img src="'+f+'" loading="lazy"><div class="label">'+name+'</div></div>';
+});
+</script>
+</body>
+</html>
